@@ -5,42 +5,42 @@ const products = [
     name: "Air Force",
     description: "Classic sneakers reimagined",
     category: "shoes",
-    image: `<img src="Screenshot 2025-01-16 at 16.31.19.png" alt="Air Force" style="width:100%; height:100%; object-fit:cover;">`,
+    image: `<img src="/resources/airforce.png" alt="Air Force" style="width:100%; height:100%; object-fit:cover;">`,
   },
   {
     id: 2,
     name: "Dunk",
     description: "Street style essential", 
     category: "shoes",
-    image: `<img src="Screenshot 2025-01-16 at 16.31.19.png" alt="Dunk" style="width:100%; height:100%; object-fit:cover;">`,
+    image: `<img src="/resources/dunk.png" alt="Dunk" style="width:100%; height:100%; object-fit:cover;">`,
   },
   {
     id: 3,
     name: "Air Cushion",
     description: "Performance meets style",
     category: "shoes",
-    image: `<img src="Screenshot 2025-01-16 at 16.31.19.png" alt="Air Cushion" style="width:100%; height:100%; object-fit:cover;">`,
+    image: `<img src="/resources/aircushion.png" alt="Air Cushion" style="width:100%; height:100%; object-fit:cover;">`,
   },
   {
     id: 4,
     name: "Jordan Series",
     description: "Iconic basketball heritage",
     category: "shoes",
-    image: `<img src="Screenshot 2025-01-16 at 16.31.19.png" alt="Jordan Series" style="width:100%; height:100%; object-fit:cover;">`,
+    image: `<img src="/resources/airjordan.png" alt="Jordan Series" style="width:100%; height:100%; object-fit:cover;">`,
   },
   {
     id: 5,
     name: "Emergency Lights",
     description: "Innovative lighting solutions",
     category: "emergency",
-    image: `<img src="Screenshot 2025-01-16 at 16.31.19.png" alt="Emergency Lights" style="width:100%; height:100%; object-fit:cover;">`,
+    image: `<img src="/resources/emlight.png" alt="Emergency Lights" style="width:100%; height:100%; object-fit:cover;">`,
   },
   {
     id: 6,
     name: "Solar Equipment",
     description: "Sustainable power solutions",
     category: "solar",
-    image: `<img src="Screenshot 2025-01-16 at 16.31.19.png" alt="Solar Equipment" style="width:100%; height:100%; object-fit:cover;">`,
+    image: `<img src="/resources/solarlight.png" alt="Solar Equipment" style="width:100%; height:100%; object-fit:cover;">`,
   }
 ];
 
@@ -48,34 +48,26 @@ const products = [
 const latestProducts = [
   {
     id: 7,
-    name: "Smart Watch",
-    description: "Next-gen smartwatch with health tracking",
+    name: "Sconce",
+    description: "Solar energy wall washing spotlights outdoor rainproof courtyard atmosphere luminous wall lamp",
     category: "electronics",
-    image: `<img src="aj1.png" alt="Air Jordan 1" style="width:100%; height:100%; object-fit:contain;">`,
+    image: `<img src="/resources/walllamp.png" alt="wall lamp" style="width:100%; height:100%; object-fit:contain;">`,
     price: 0
   },
   {
     id: 8,
-    name: "Smart Speaker",
-    description: "Voice-controlled smart home hub",
+    name: "Multifunctional light",
+    description: "Fire-fighting multifunctional broken window flashlight safety hammer",
     category: "electronics",
-    image: `<img src="aj1.png" alt="Air Jordan 1" style="width:100%; height:100%; object-fit:contain;">`,
+    image: `<img src="/resources/multilight.png" alt="Multifunctional light" style="width:100%; height:100%; object-fit:contain;">`,
     price: 0
   },
   {
     id: 9,
-    name: "Wireless Earbuds",
-    description: "Premium wireless audio experience",
+    name: "Nike Dunk Low",
+    description: "Nike Dunk Low What The Ducks Of A Feather",
     category: "audio",
-    image: `<img src="aj1.png" alt="Air Jordan 1" style="width:100%; height:100%; object-fit:contain;">`,
-    price: 0
-  },
-  {
-    id: 10,
-    name: "Power Bank",
-    description: "Portable charging solution",
-    category: "accessories",
-    image: `<img src="aj1.png" alt="Air Jordan 1" style="width:100%; height:100%; object-fit:contain;">`,
+    image: `<img src="/resources/dunklow.png" alt="Nike Dunk" style="width:100%; height:100%; object-fit:contain;">`,
     price: 0
   }
 ];
