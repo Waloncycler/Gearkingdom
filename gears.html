@@ -1,20 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gears</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gears - Gearkingdom</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- existing code -->
-    <div class="footer-section">
+  <header>
+    <nav>
+      <div class="logo">Gearkingdom</div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/gears.html" class="active">Gears</a>
+        <a href="/about.html">About Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Explore Our Gear Collection</h1>
+        <p>Find the perfect gear for your needs</p>
+      </div>
+      
+      <div class="carousel">
+        <div class="carousel-container" id="carouselContainer">
+          <!-- Carousel slides will be loaded here -->
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-control prev" id="prevSlide">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+          <div class="carousel-indicators" id="carouselIndicators">
+            <!-- Indicators will be added here -->
+          </div>
+          <button class="carousel-control next" id="nextSlide">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="category-grid">
+        <div class="category-card" data-category="shoes">
+          <div class="category-icon">
+            <svg width="64" height="64" viewBox="0 0 64 64">
+              <path d="M12 40c0 0 5-10 20-10s20 10 20 10" fill="none" stroke="#212a2f" stroke-width="4"/>
+              <path d="M15 35c0 0 4-8 17-8s17 8 17 8" fill="none" stroke="#f8f7f5" stroke-width="2"/>
+              <path d="M52 40c0 2-18 4-20 4s-20-2-20-4" fill="#212a2f"/>
+            </svg>
+          </div>
+          <h2>Shoes</h2>
+          <p>Premium footwear collection</p>
+        </div>
+        <div class="category-card" data-category="emergency">
+          <div class="category-icon">
+            <svg width="64" height="64" viewBox="0 0 64 64">
+              <path d="M32 8L56 48H8L32 8z" fill="#212a2f"/>
+              <path d="M30 25v10h4v-10h-4zM30 37v4h4v-4h-4z" fill="#f8f7f5"/>
+            </svg>
+          </div>
+          <h2>Emergency Equipment</h2>
+          <p>Essential safety gear</p>
+        </div>
+        
+        <div class="category-card" data-category="solar">
+          <div class="category-icon">
+            <svg width="64" height="64" viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="16" fill="#212a2f"/>
+              <path d="M32 8v8 M32 48v8 M8 32h8 M48 32h8 M13.7 13.7l5.6 5.6 M44.7 44.7l5.6 5.6 M13.7 50.3l5.6-5.6 M44.7 19.3l5.6-5.6" stroke="#212a2f" stroke-width="4"/>
+            </svg>
+          </div>
+          <h2>Solar Equipment</h2>
+          <p>Sustainable energy solutions</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="products featured-collection">
+      <h2>Featured Products</h2>
+      <div class="product-grid" id="categoryProducts">
+        <!-- Products will be loaded here -->
+      </div>
+    </section>
+  </main>
+
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We're dedicated to providing the highest quality products and exceptional customer service. With years of experience in sustainable manufacturing and innovative design, we strive to exceed customer expectations while maintaining our commitment to environmental responsibility.</p>
+      </div>
+      <div class="footer-section">
         <h3>Contact</h3>
         <p><strong>Email:</strong> Jonas285797@gmail.com</p>
         <p><strong>Phone:</strong> +86 193004417690</p>
         <p><strong>Business Hours:</strong> Mon-Fri 9:00-18:00</p>
         <p><strong>Location:</strong> Room 402, Ming Shi Garden Community, Phoenix Road, Chengxiang District, Putian City, Fujian Province, Mainland China</p>
+      </div>
+      <div class="footer-section">
+        <div class="social-links" style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="qr-grid" style="display: flex; gap: 20px;">
+            <div class="qr-code">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <img src="/resources/what‘sapp.png" width="150" height="150"/>
+              </svg>
+            </div>
+            <div class="qr-code">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <img src="/resources/messenger.png" width="152" height="152">
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- existing code -->
+    <div class="footer-bottom">
+      <p>&copy; 2024 Gearkingdom. All rights reserved. | Premium Quality Sustainable Products | Your Trusted Gear Partner</p>
+    </div>
+  </footer>
+
+  <div class="whatsapp-float">
+    <div class="whatsapp-notification">
+      Chat with us for quick orders!
+    </div>
+    <div class="whatsapp-button" id="whatsappButton">
+      <svg viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+      </svg>
+    </div>
+    <div class="whatsapp-qr" id="whatsappQR">
+      <svg>
+        <img src="/resources/what‘sapp.png" width="150" height="150"/>
+      </svg>
+    </div>
+  </div>
+
+  <script type="module" src="gears.js"></script>
 </body>
 </html>
