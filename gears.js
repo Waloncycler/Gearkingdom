@@ -1,10 +1,41 @@
 import { products, createProductCard } from './script.js';
 
-// Update product categories and ensure all products use the specified image
+// Update product categories and ensure all products use the specified images
 const updatedProducts = products.map(product => {
   const baseProduct = {
     ...product,
-    image: `<img src="Screenshot 2025-01-16 at 16.31.19.png" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`
+    images: [
+      // 根据产品名称设置不同的多张图片
+      ...(product.name === "Air Force" ? [
+        `<img src="/resources/airforce1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/airforce2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+      ] : []),
+      ...(product.name === "Dunk" ? [
+        `<img src="/resources/dunk1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/dunk2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+      ] : []),
+      ...(product.name === "Air Cushion" ? [
+        `<img src="/resources/aircushion1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/aircushion2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+      ] : []),
+      ...(product.name === "Jordan Series" ? [
+        `<img src="/resources/jordan.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/jordan2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/jordan3.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/jordan4.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/jordan5.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+      ] : []),
+      ...(product.name === "Emergency Lights" ? [
+        `<img src="/resources/emergency_lights1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/emergency_lights2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+      ] : []),
+      ...(product.name === "Solar Equipment" ? [
+        `<img src="/resources/solar_equipment1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/solar_equipment2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+      ] : []),
+      // 默认图片
+      `<img src="/resources/default.png" alt="${product.name} - default" style="width:100%; height:100%; object-fit:contain;">`
+    ]
   };
 
   // Categorize products

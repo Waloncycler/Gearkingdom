@@ -221,3 +221,10 @@ document.addEventListener('click', (event) => {
     whatsappQR.classList.remove('show');
   }
 });
+
+// 假设您有一个下拉选择器来选择案例
+// <select id="caseSelector">
+//     <option value="case1">案例 1</option>
+//     <option value="case2">案例 2</option>
+// </select>
+// <div id="imagesContainer"></div>
