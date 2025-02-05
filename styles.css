@@ -1148,3 +1148,26 @@ html {
   height: auto;
   margin: 5px;
 }
+
+/* 新增样式以调整产品图片的展示 */
+#moreImagesContainer {
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
+  justify-content: center; /* 居中对齐 */
+  gap: 10px; /* 图片之间的间距 */
+  padding: 20px; /* 内边距 */
+  background-color: rgba(255, 255, 255, 0.9); /* 背景颜色 */
+  border-radius: 8px; /* 圆角 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+#moreImagesContainer img {
+  max-width: 100%; /* 确保图片不超出容器 */
+  height: auto; /* 自适应高度 */
+  border-radius: 4px; /* 图片圆角 */
+  transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+#moreImagesContainer img:hover {
+  transform: scale(1.05); /* 悬停时放大效果 */
+}

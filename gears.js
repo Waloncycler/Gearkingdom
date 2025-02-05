@@ -7,42 +7,43 @@ const updatedProducts = products.map(product => {
     images: [
       // 根据产品名称设置不同的多张图片
       ...(product.name === "Air Force" ? [
-        `<img src="/resources/airforce1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
-        `<img src="/resources/airforce2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+        `<img src="/resources/airforce.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/airforce2.jpeg" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/airforce3.jpeg" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`
       ] : []),
       ...(product.name === "Dunk" ? [
-        `<img src="/resources/dunk1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
-        `<img src="/resources/dunk2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+        `<img src="/resources/dunk.png" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/dunklow.png" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`
       ] : []),
       ...(product.name === "Air Cushion" ? [
-        `<img src="/resources/aircushion1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
-        `<img src="/resources/aircushion2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+        `<img src="/resources/aircushion.png" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`
       ] : []),
       ...(product.name === "Jordan Series" ? [
-        `<img src="/resources/jordan.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
-        `<img src="/resources/jordan2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`,
-        `<img src="/resources/jordan3.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
-        `<img src="/resources/jordan4.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`,
-        `<img src="/resources/jordan5.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+        `<img src="/resources/airjordan.png" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/airjordan2.jpeg" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/airjordan3.jpeg" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/airjordan4.jpeg" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/airjordan5.jpeg" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`
       ] : []),
       ...(product.name === "Emergency Lights" ? [
-        `<img src="/resources/emergency_lights1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
-        `<img src="/resources/emergency_lights2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
+        `<img src="/resources/emlight.png" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/emlight2.jpg" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`
       ] : []),
       ...(product.name === "Solar Equipment" ? [
-        `<img src="/resources/solar_equipment1.png" alt="${product.name} - 1" style="width:100%; height:100%; object-fit:contain;">`,
-        `<img src="/resources/solar_equipment2.png" alt="${product.name} - 2" style="width:100%; height:100%; object-fit:contain;">`
-      ] : []),
-      // 默认图片
-      `<img src="/resources/default.png" alt="${product.name} - default" style="width:100%; height:100%; object-fit:contain;">`
+        `<img src="/resources/solarlight.png" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`,
+        `<img src="/resources/walllamp.png" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;">`
+      ] : [])
     ]
   };
 
   // Categorize products
   switch (product.name) {
     case "Air Force":
+      return { ...baseProduct, category: "shoes" };
     case "Dunk":
+      return { ...baseProduct, category: "shoes" };
     case "Air Cushion":
+      return { ...baseProduct, category: "shoes" };
     case "Jordan Series":
       return { ...baseProduct, category: "shoes" };
     case "Emergency Lights":
@@ -67,14 +68,39 @@ function filterProductsByCategory(category) {
   });
 }
 
-// Update the product display when category is selected
+// 处理点击事件以显示更多产品图像
+function showMoreProductImages(product) {
+  const moreImagesContainer = document.getElementById('moreImagesContainer');
+  moreImagesContainer.innerHTML = ''; // 清空现有内容
+
+  // 添加产品图像
+  if (product.images && product.images.length > 0) {
+    product.images.forEach(image => {
+      const imgElement = document.createElement('div');
+      imgElement.innerHTML = image; // 使用产品图像的 HTML
+      moreImagesContainer.appendChild(imgElement);
+    });
+  } else {
+    // 如果没有图片，显示一个默认消息
+    moreImagesContainer.innerHTML = '<p>没有可用的产品图片。</p>';
+  }
+}
+
+// 更新 `showCategoryProducts` 函数以添加点击事件
 function showCategoryProducts(category) {
   const categoryProducts = document.getElementById('categoryProducts');
   categoryProducts.innerHTML = '';
   
   const filteredProducts = filterProductsByCategory(category);
   filteredProducts.forEach(product => {
-    categoryProducts.appendChild(createProductCard(product));
+    const productCard = createProductCard(product);
+    
+    // 添加点击事件以显示更多图像
+    productCard.addEventListener('click', () => {
+      showMoreProductImages(product);
+    });
+    
+    categoryProducts.appendChild(productCard);
   });
 }
 
